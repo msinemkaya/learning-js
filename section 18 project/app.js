@@ -10,6 +10,36 @@ eventListeners();
 //all event listeners
 function eventListeners() {
     form.addEventListener("submit", addTodo);
+    document.addEventListener("DOMContentLoaded", loadAllTodosToUI);
+    secondCardBody.addEventListener("click",deleteTodo);
+}
+
+function deleteTodo(e) {
+    let todo = e.target.parentElement.parentElement //you reach to the li element with parentElement
+    
+    if(e.target.className === "fa fa-remove") { // deletes todos from UI
+        todo.remove();  //then you remove it
+        deleteTodoFromStorage(todo.textContent)
+        showAlert("success","todo has been deleted successfuly")
+    }
+}
+
+function deleteTodoFromStorage(deleteTodo) {
+    let todos = getTodosFromStorage();
+    todos.forEach((todo) => {
+        if(todo === deleteTodo) {
+            todos.splice(index,1); // we delete the value from the array of todos like this
+        }
+    });
+    localStorage.setItem("todos", JSON.stringify(todos)); //with this we update the todo array with the new one that no longer has the deleted value
+}
+
+function loadAllTodosToUI() {
+    let todos = getTodosFromStorage();
+
+    todos.forEach(function(todo) {
+        addTodoToUI(todo);
+    })
 }
 
 function addTodo(e) {
@@ -19,10 +49,27 @@ function addTodo(e) {
         showAlert("danger","todo input is empty");
     }else {
         addTodoToUI(newTodo);
+        addTodoToStorage(newTodo);
         showAlert ("success","you added a new todo")
     }
 
     e.preventDefault(); //to prevent from submitted form to renwe the page
+}
+
+function getTodosFromStorage() { //gets all the todos from storage
+    let todos;
+    if (!localStorage.getItem("todos")) {
+        todos = [];
+    }else {
+        todos = JSON.parse(localStorage.getItem("todos"))
+    }
+    return todos;
+}
+
+function addTodoToStorage(newTodo) {
+    let todos = getTodosFromStorage();
+    todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function showAlert(type, message) {
