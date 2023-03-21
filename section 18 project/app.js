@@ -15,6 +15,21 @@ function eventListeners() {
     filter.addEventListener("keyup", filterTodos);
 }
 
+function clearAllTodos(e) {
+    // clearing todos from interface
+
+    if(confirm("you sure you want to delete them all ?")) {
+        // todoList.innerHTML = ""; but it is a bit slow 
+        
+        //while todolist still has an element (since everytime you delete the first element next one becomes the first)
+        // it removes the first child
+        while(todoList.firstElementChild != null){
+            todoList.removeChild(todoList.firstElementChild)
+        }
+        localStorage.removeItem("todos"); //if you delete the key from local storage you delete the whole thing (meaning values will be deleted as obvious)
+    }
+}
+
 function filterTodos(e) {
     const filterValue = e.target.value.toLowerCase();
     const listItems = document.querySelectorAll(".list-group-item");
