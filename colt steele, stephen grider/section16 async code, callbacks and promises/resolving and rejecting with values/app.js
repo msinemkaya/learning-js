@@ -23,6 +23,7 @@ fakeRequest('/users')
 	.then((res) => {
 		console.log(res.status, res.data);
 	})
+	//if something is rejected callback will run instead of catch
 	.catch((res) => {
 		console.log(res.status);
 	});
