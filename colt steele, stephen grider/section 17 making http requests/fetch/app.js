@@ -22,7 +22,7 @@ fetch("https://swapi.dev/api/planets/")
         you will see in Response object there is body:ReadableStream
         what is this ?
         it is a stream of byte data and is the key difference from using xhr
-        content of the response is in the form of readable stream
+        content of the response is in the form of readable stream.
         with doing response.json() we read that stream to completion.
         but it takes time since its async(meaning it takes time) so json() returns a promise too
     */
