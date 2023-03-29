@@ -28,3 +28,21 @@ h.push(6);
 console.log(i);
 //this one does not look into the h directly it looks up to the place h references to
 // so as a result i is changing when h changes
+
+//We can put any type in a variable. For example, a variable can at one moment be a string and then store a number
+let message = "hello";
+message = 123456;
+//Programming languages that allow such things, such as JavaScript,
+// are called “dynamically typed”, meaning that there exist data types,
+// but variables are not bound to any of them.
+
+//NaN is sticky. Any further mathematical operation on NaN returns NaN
+// there is an exception tho NaN ** 0 is 1
+
+console.log(NaN ** 0)
+
+/*
+    You may also come across another syntax: typeof(x). It’s the same as typeof x.  
+    To put it clear: typeof is an operator, not a function. The parentheses here aren’t a part of typeof. 
+    It’s the kind of parentheses used for mathematical grouping
+*/
