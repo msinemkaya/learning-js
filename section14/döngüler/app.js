@@ -23,3 +23,14 @@ const b = {
 for (let key in b){
     console.log(key, b[key])
 }
+
+//if you were to use break it would only break from the inner loop to we use 
+//labels and break (label is "outer" in this case) instead to break from the outer most loop
+outer: for(let i = 0; i <3; i++){
+    for(let j = 0; j<3; j++) {
+        let input = prompt(`Value at coords (${i},${j})`, '');
+        // if an empty string or canceled, then break out of both loops
+    if (!input) break outer; 
+    }
+}
+alert("done")
