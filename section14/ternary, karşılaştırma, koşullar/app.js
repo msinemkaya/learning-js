@@ -23,3 +23,4 @@ true || alert("will not be printed")
 false || alert("will be printed")
 
 //&& finds the first falsy || finds the first truthy
+// ?? returns the first not null or undefined value (so first defined value)
