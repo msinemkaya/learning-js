@@ -16,3 +16,10 @@ console.log(2 === "2"); //false
 //null == undefined //true
 
 //lowecase letters > capital letters 
+
+//since or returns the first truthy first alert will not be printed 
+//but the second one will be printed and doing it like so is called "short-circuit"
+true || alert("will not be printed")
+false || alert("will be printed")
+
+//&& finds the first falsy || finds the first truthy
