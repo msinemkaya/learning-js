@@ -9,3 +9,10 @@ console.log(2 === "2"); //false
 
 //ternary is shorthand version of if statement
 // a ? "do this" : "do that"
+
+//There’s a special rule. These two are a “sweet couple”: they equal each other (in the sense of ==), but not any other value.
+
+//null === undefined //false
+//null == undefined //true
+
+//lowecase letters > capital letters 
