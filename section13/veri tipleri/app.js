@@ -46,3 +46,5 @@ console.log(NaN ** 0)
     To put it clear: typeof is an operator, not a function. The parentheses here aren’t a part of typeof. 
     It’s the kind of parentheses used for mathematical grouping
 */
+
+//Some languages (namely PHP) treat "0" as false. But in JavaScript, a non-empty string is always true.
