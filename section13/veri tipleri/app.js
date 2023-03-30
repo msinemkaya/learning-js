@@ -7,10 +7,12 @@ var b = 3.1;
 var c = null
 var d
 var e =[1,2,3];
+var f = NaN
 
 console.log(typeof a, typeof b, typeof d);
 console.log(typeof c); //returns object not null
 console.log(typeof e); //all referance typed variables returns object
+console.log(typeof f) //returns number ???
 
 var f = 10;
 var g = f;
@@ -48,3 +50,4 @@ console.log(NaN ** 0)
 */
 
 //Some languages (namely PHP) treat "0" as false. But in JavaScript, a non-empty string is always true.
+
