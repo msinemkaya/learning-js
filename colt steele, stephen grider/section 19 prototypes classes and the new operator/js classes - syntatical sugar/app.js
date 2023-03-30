@@ -17,3 +17,10 @@ class Color {
 }
 
 const c1 = new Color(66, 66, 66, "meliko");
+
+/*
+  If you come from another programming language, then you are probably used to the idea of a "bound this", 
+  where methods defined in an object always have this referencing that object.
+  In JavaScript this is “free”, its value is evaluated at call-time and 
+  does not depend on where the method was declared, but rather on what object is “before the dot”.
+*/
