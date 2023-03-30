@@ -22,3 +22,5 @@ const hako = "hhk";
 hako.meliko();
 
 //and we can overwrite existing ones too
+
+//The assignment to F.prototype sets up [[Prototype]] for new objects, but it does not affect the existing ones.
